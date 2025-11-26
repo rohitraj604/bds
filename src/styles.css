@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+/* General layout */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  height: 100%;
+  overflow: hidden;
+}
+button,
+a,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+  /* For older WebKit browsers */
+}
+canvas {
+  display: block;
+}
+
+.landing-page,
+.surprise-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.landing-page {
+  background-color: #99daf0;
+  color: black;
+}
+
+.landing-font {
+  font-family: 'Pacifico', cursive;
+  /* playful font */
+  font-size: 1.5rem;
+  color: #3374d6;
+  /* deep pink text */
+}
+
+.black-bg {
+  background-color: black;
+  color: white;
+}
+
+/* Base state: black background */
+.surprise-page {
+  background: #000;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: background 2s linear;
+}
+
+/*
+.surprise-page.pink-bg {
+  animation: pinkGradient 2s forwards;
+}
+
+
+@keyframes pinkGradient {
+  0% {
+    background: linear-gradient(135deg, #000 0%, #000 100%);
+  }
+  50% {
+    background: linear-gradient(135deg, #ffb6c1 0%, #ff69b4 50%, #000 100%);
+  }
+  100% {
+    background: linear-gradient(135deg, #ffb6c1 0%, #ff69b4 100%);
+  }
+} */
+.surprise-page.pink-bg {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(to top right, #7bb5cc 20%, white 70%);
+  background-size: 200% 200%;
+  animation: color-change 2s ease-in-out forwards;
+}
+
+@keyframes color-change {
+  0% {
+    background-position: top right;
+  }
+
+  100% {
+    background-position: bottom left;
+  }
+}
+
+  /* Wish Card Container */
+  .wish-card {
+    width: 100%;
+    max-width: 48rem; 
+    padding: 2.5rem 2rem; 
+    background: url("pages/dbg.jpg") no-repeat fixed center;
+    border-radius: 1.5rem; 
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+.message-box {
+  background: url("pages/dbg.jpg") no-repeat fixed center;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
+.btn {
+  background: #393cf7;
+  color: white;
+  padding: 12px 24px;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #0586f0;
+}
+
+.cut-btn {
+  background: #393cf7;
+}
+
+/* Balloons */
+.balloons {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  pointer-events: none;
+}
+
+.balloon::after {
+  content: "";
+  position: absolute;
+  top: 80px;
+  /* start from bottom of balloon */
+  left: 50%;
+  width: 2px;
+  height: 80px;
+  /* length of thread */
+  background: black;
+  transform: translateX(-50%);
+}
+
+.balloon {
+  width: 60px;
+  height: 80px;
+  background: radial-gradient(circle at 30% 30%, #ff9a9e, #f5576c);
+  border-radius: 50% 50% 50% 50%;
+  margin: 0 10px;
+  animation: float 6s linear infinite;
+}
+
+.balloon:nth-child(2n) {
+  background: radial-gradient(circle at 30% 30%, #94bef5, #3a93fa);
+  animation-duration: 7s;
+}
+
+.balloon:nth-child(3n) {
+  background: radial-gradient(circle at 30% 30%, #89f5f5, #1da5aa);
+  animation-duration: 8s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+
+.decoration-img {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  /* adjust size */
+  z-index: 1;
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.8);
+    top: 15%;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    top: 10%;
+  }
+}
+
+.flbox {
+  background: url("pages/dbg2.jpg");
+  font-size: 1.5em;
+  font-weight: 1000;
+}
+
+.flbox-ins{
+  font-size: 0.7em;
+  font-weight: 500;
+}
+
+.bouncy {
+  width: 75px;
+  height: 75px;
+  background: url("pages/pp2.png") center/contain no-repeat ;
+  position: absolute;
+  top: 0%;
+  /* left: 0%; */
+  /* opacity: 0; */
+  animation: bounceIn 0.6s forwards, fadeOut 0.6s forwards 5s;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform:  scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform:  scale(1.1);
+    opacity: 1;
+  }
+  70% {
+    transform:  scale(0.9);
+  }
+  100% {
+    transform:  scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+
+.hkitty{
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  top: 70%;
+  filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.8));
+}

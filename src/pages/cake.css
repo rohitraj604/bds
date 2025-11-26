@@ -1,0 +1,64 @@
+.split-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; 
+  margin-top: 250px;
+  height: 400px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.split-image-container .split-image {
+  width: 100px;
+  height: 210px;
+  background: url("./bcake.png");
+  background-size: cover;
+  transition: all 0.6s ease;
+}
+
+.split-image-container .split-image:nth-child(2) {
+  background-position-x: 100px;
+}
+
+/* Instead of hover → trigger split on .cut */
+.split-image-container.cut .split-image:nth-child(1) {
+  /* transform: translateX(-20px); */
+  transform: translateY(-10%) translateX(-20px) rotate(-4deg);
+}
+.split-image-container.cut .split-image:nth-child(2) {
+  /* transform: translateX(20px); */
+  transform: translateY(-10%) translateX(20px) rotate(4deg);
+}
+
+/* Knife animation */
+.knife {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  width: 8px;
+  height: 100px;
+  background: rgb(88, 88, 88);
+  transform: translateX(-50%);
+  opacity: 0;
+  z-index: 10;
+}
+
+.split-image-container.cut .knife {
+  animation: knife-cut 1s forwards;
+}
+
+@keyframes knife-cut {
+  0% { top: -80px; opacity: 1; }
+  50% { top: 100px; opacity: 1; }
+  100% { top: 180px; opacity: 0; }
+}
+
+/* Button styling */
+.cut-btn {
+  position: absolute;
+  top: 300px;
+  transform: translateY(-50%);
+  height: 50px;
+}
+

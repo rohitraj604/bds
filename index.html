@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Happy Birthday Trapti 🎂</title>
+
+    <style>
+      /* Include the CSS directly in the <head> for quick loading/hiding */
+      #mobile-warning {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        color: #333;
+        background-color: #d7f8f6;
+        border: 2px solid #44b1ab;
+        margin: 20px;
+        border-radius: 10px;
+        margin-top: 50px;
+      }
+
+      .gdimg {
+        height: 40px;
+      }
+
+      /* Default view: Hide the app container and show the warning */
+      #app-container {
+        display: none;
+      }
+
+      /* The media query magic: Show the app and hide the warning for larger screens */
+      @media (min-width: 768px) {
+        #app-container {
+          display: block !important; /* Force show the React app */
+        }
+        #mobile-warning {
+          display: none !important; /* Force hide the warning */
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div id="app-container">
+      <div id="root"></div>
+    </div>
+
+    <div id="mobile-warning">
+      <h2>Mobile View Not Supported!!!</h2>
+      <p>
+        This site is optimized for <b>*tablet and desktop*</b> screens only.
+        Please enable <b>*Desktop Site*</b> mode in your browser settings to
+        view the content.
+      </p>
+      <p>Follow the steps below to enable Desktop Site mode on Android:</p>
+      <ol>
+        <li>
+          Tap the <strong>⋮</strong> (menu) in the top-right corner of your
+          browser.
+        </li>
+        <img src="./gdimg1.jpg" class="gdimg" />
+        <li>Check the box next to "Desktop site" or "Request desktop site."</li>
+        <img src="./gdimg2.jpg" class="gdimg" style="border: 3.5px solid red" />
+        <li>
+          The page will reload in desktop mode and the site will be opened.
+        </li>
+      </ol>
+    </div>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

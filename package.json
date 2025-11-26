@@ -1,0 +1,32 @@
+{
+  "name": "birthday-surprise",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simple React + Vite project with React Router.",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "vite.config.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "build": "^0.1.4",
+    "firebase": "^12.6.0",
+    "react": "18.2.0",
+    "react-confetti": "^6.4.0",
+    "react-dom": "18.2.0",
+    "react-router-dom": "^6.14.1",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@vitejs/plugin-react": "^5.0.2",
+    "vite": "^7.1.5"
+  },
+  "overrides": {
+    "@rollup/rollup-android-arm64": "4.45.1"
+  }
+}
