@@ -21,5 +21,3 @@ How to run:
 1. Install: `npm install`
 2. Dev: `npm run dev`
 3. Build: `npm run build`
-
-This project is intentionally minimal; you can replace the tiny synth with an MP3 and enhance visuals later.
