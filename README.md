@@ -12,6 +12,10 @@ Features:
   - Cut the cake and light candles
   - Typed name: "Trapti"
   - Share / copy link button
+  - Then comes a page with tree made up of hearts
+  - Then comes Some Birthday wishes and button to see next surprise
+  - Then comes a page with black looks like space containing a text "HBD Trapti" and a picture
+                                                                
 
 How to run:
 1. Install: `npm install`
