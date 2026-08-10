@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import img from "./img2.jpg"
+import img from "./img.png"
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 const Galaxy = () => {
@@ -30,7 +30,7 @@ const Galaxy = () => {
       const mat = new THREE.SpriteMaterial({ map: tex, transparent: true });
       for (let i = 0; i < 100; i++) {
         const sprite = new THREE.Sprite(mat.clone());
-        sprite.scale.set(200, 200, 1);
+        sprite.scale.set(200, 280, 1);
         sprite.position.set((Math.random() - 0.5) * 3000, (Math.random() - 0.5) * 3000, (Math.random() - 0.5) * 3000);
         scene.add(sprite);
         animatedSprites.push(sprite);
@@ -66,18 +66,6 @@ const Galaxy = () => {
       scene.add(sprite);
       animatedSprites.push(sprite);
       textSprites.push({ sprite, baseColor: color });
-    }
-
-    // === Red glowing blobs ===
-    const blobTex = createTextTexture(' ', 'red');
-    const blobMat = new THREE.SpriteMaterial({ map: blobTex, transparent: true, opacity: 0.6 });
-    for (let i = 0; i < 40; i++) {
-      const sprite = new THREE.Sprite(blobMat.clone());
-      const s = 100 + Math.random() * 150;
-      sprite.scale.set(s, s, 1);
-      sprite.position.set((Math.random() - 0.5) * 3000, (Math.random() - 0.5) * 3000, (Math.random() - 0.5) * 3000);
-      scene.add(sprite);
-      animatedSprites.push(sprite);
     }
 
     // === Stars background ===

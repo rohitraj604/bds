@@ -32,14 +32,13 @@
 }
 
 /* Knife animation */
-.knife {
+ .knife {
   position: absolute;
   top: -80px;
   left: 50%;
-  width: 8px;
+  width: 100px;
   height: 100px;
-  background: rgb(88, 88, 88);
-  transform: translateX(-50%);
+  transform: rotateZ(-45deg) rotateY(-45deg) translateX(-65%);
   opacity: 0;
   z-index: 10;
 }

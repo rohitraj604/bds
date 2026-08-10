@@ -6,6 +6,7 @@ import hKitty from "./hkitty.gif";
 import hBds from "./hbds.mp3";
 import lheart from "./lheart.png";
 import chipchip from "./chipchip.gif";
+import knife from "./knife.png";
 import "./cake.css";
 import { useNavigate } from "react-router-dom";
 import { Font } from "three/examples/jsm/Addons.js";
@@ -114,7 +115,8 @@ export default function Surprise() {
             </button>
           )}
 
-          <div className="knife"></div>
+          {/* <div className="knife"></div> */}
+          <img className="knife" src={knife} />
         </div>
       )}
 
@@ -164,8 +166,8 @@ export default function Surprise() {
               backgroundImage: `url(${lheart})`,
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
-              width: "294px",
-              height: "126px",
+              width: "346px",
+              height: "149px",
               position: "absolute",
               bottom: "10px",
               right: "10px",
